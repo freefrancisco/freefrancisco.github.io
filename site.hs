@@ -2,6 +2,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
+import           Text.Pandoc 
 
 
 --------------------------------------------------------------------------------
@@ -17,13 +18,13 @@ main = hakyll $ do
 
     match (fromList ["about.rst", "contact.markdown"]) $ do
         route   $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ myPandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
     match "posts/*" $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ myPandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
@@ -66,3 +67,10 @@ postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext
 
+-- This is where I can modify the default pandoc compiler to do my bidding
+myPandocCompiler :: Compiler (Item String)
+myPandocCompiler = pandocCompilerWith readerOptions writerOptions
+    where
+    readerOptions = defaultHakyllReaderOptions
+    writerOptions = defaultHakyllWriterOptions
+                    { writerHTMLMathMethod = MathJax "" }
