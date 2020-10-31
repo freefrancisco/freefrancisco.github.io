@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>My Hakyll Blog - another post</title>
         <link rel="stylesheet" type="text/css" href="../css/default.css" />
+        <link rel="stylesheet" type="text/css" href="../css/syntax.css" />
         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
     </head>
@@ -32,6 +33,14 @@
 <p>If mathjax worked this would show up <span class="math inline">\(x + y\)</span></p>
 <p>and so would this <span class="math display">\[ \frac{x}{y} \]</span></p>
 <p>let’s see if I can add it…</p>
+<p>Now what happens when I do code?</p>
+<p>This haskell code should be highlighted…</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ot">f ::</span> <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">Int</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>f x <span class="ot">=</span> <span class="dv">2</span> <span class="op">*</span> x</span></code></pre></div>
+<p>Same code but without indicating it’s haskell…</p>
+<pre><code>f :: Int -&gt; Int
+f x = 2 * x</code></pre>
+<p>Profit!</p>
 
         </div>
         <div id="footer">
