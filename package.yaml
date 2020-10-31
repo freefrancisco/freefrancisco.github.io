@@ -1,0 +1,17 @@
+name: myblog
+version: '0.1.0.0'
+category: Web
+author: Francisco Gutierrez
+maintainer: freefrancisco@gmail.com
+copyright: 2020 Francisco Gutierrez
+license: BSD3
+homepage: https://freefrancisco.github.io
+extra-source-files:
+- README.md
+dependencies:
+- base # >=4.7 && <5
+- hakyll
+executables:
+  myblog:
+    main: site.hs
+    ghc-options: -threaded
