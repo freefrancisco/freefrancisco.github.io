@@ -2,7 +2,7 @@
 title: another post
 ---
 
-If mathjax worked this would show up $ x + y $ 
+If mathjax worked this would show up $x + y$ 
 
 and so would this $$ \frac{x}{y} $$
 
